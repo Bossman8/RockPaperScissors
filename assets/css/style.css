@@ -1,7 +1,7 @@
 strong {
     font-size: 60px !important;
 }
-#red {
+#player1 {
     background-color: antiquewhite !important;
     width: 80% !important;
     height: 200px;
@@ -9,7 +9,7 @@ strong {
     border-style: solid;
     border-width: 5px;
 }
-#white {
+#scoreBox {
     background-color: antiquewhite !important;
     width: 80% !important;
     height: 200px;
@@ -17,11 +17,21 @@ strong {
     border-style: solid;
     border-width: 5px;
 }
-#blue {
+#player2 {
     background-color: antiquewhite !important;
     width: 80% !important;
     height: 200px;
     border: 3px lightblue;
+    border-style: solid;
+    border-width: 5px;
+}
+#textArea {
+    width: 80% !important;
+}
+#textArea {
+    margin-top: 30px;
+    height: 200px;
+    border: lightblue;
     border-style: solid;
     border-width: 5px;
 }

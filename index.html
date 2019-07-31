@@ -24,36 +24,71 @@
         <form role="form" class="text-center">
             <div class="form-group">
                 <label for="text"></label>
-                <input type="text" class="formControl" id="inputName" placeholder="Name">
-                <button id="addUser">Start</button>
+                <input type="text" class="formControl" id="userName" placeholder="Name">
+                <button type="submit" id="addUser">Start</button>
             </div>
         </form>
 
         <div class="row">
             <div class="col-md-4">
 
-                <div class="container" id="red">
-                    <p>ipsum30</p>
+                <div class="container" id="player1">
+                    <h2 id="p1name"></h2>
+                    <h3 id="p1rock"></h3>
+                    <h3 id="p1paper"></h3>
+                    <h3 id="p1scissors"></h3>
                 </div>
 
             </div>
 
             <div class="col-md-4">
 
-                <div class="container" id="white">
-                    <p>ipsum30</p>
+                <div class="container" id="scoreBox">
+                    <h2 class="text-center">Score:</h2>
+                    <h1 class="text-center"><span id="p1score"></span> - <span id="p2score"></span></h1>
                 </div>
 
             </div>
             <div class="col-md-4">
 
-                <div class="container" id="blue">
-                    <p>ipsum30</p>
+                <div class="container" id="player2">
+                    <h2 id="p2name"></h2>
+                    <h3 id="p2rock"></h3>
+                    <h3 id="p2paper"></h3>
+                    <h3 id="p2scissors"></h3>
                 </div>
 
             </div>
+
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" id="textArea">
+                <div id="textBox">
+
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4" id="">
+                    <form role="form" class="text-center">
+                            <div class="form-group">
+                                <label for="text"></label>
+                                <input type="text" class="formControl" id="inputMessage" placeholder="Send Message">
+                                <button id="addUser">Send</button>
+                            </div>
+                        </form>
+            </div>
+                <div id="textBox">
+
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
 </body>
+<script src="./assets/javascript/app.js"></script>
+
 
 </html>
