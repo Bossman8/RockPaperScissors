@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <title>Rock Paper Scissors</title>
-    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 
     <div class="container">
         <form role="form" class="text-center">
-            <div class="form-group">
+            <div class="form-group" id="addPlayer">
                 <label for="text"></label>
                 <input type="text" class="formControl" id="userName" placeholder="Name">
                 <button type="submit" id="addUser">Start</button>
@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-md-4">
 
-                <div class="container" id="player1">
+                <div class="container" id="player1" data-state="inactive">
                     <h2 id="p1name"></h2>
                     <h3 id="p1rock"></h3>
                     <h3 id="p1paper"></h3>
@@ -46,12 +46,13 @@
                 <div class="container" id="scoreBox">
                     <h2 class="text-center">Score:</h2>
                     <h1 class="text-center"><span id="p1score"></span> - <span id="p2score"></span></h1>
+                    <h3 class="text-center" id="turn"></h3>
                 </div>
 
             </div>
             <div class="col-md-4">
 
-                <div class="container" id="player2">
+                <div class="container" id="player2" data-state="inactive">
                     <h2 id="p2name"></h2>
                     <h3 id="p2rock"></h3>
                     <h3 id="p2paper"></h3>
@@ -77,7 +78,7 @@
                             <div class="form-group">
                                 <label for="text"></label>
                                 <input type="text" class="formControl" id="inputMessage" placeholder="Send Message">
-                                <button id="addUser">Send</button>
+                                <button id="addComment">Send</button>
                             </div>
                         </form>
             </div>
@@ -92,3 +93,23 @@
 
 
 </html>
+
+
+
+<!-- var mes = database.ref('comment');
+mes.on('value', gotData, errData);
+
+function gotData(data) {
+    
+    var messages = data.val();
+    var keys = Object.keys(messages);
+    for (var i = 0; i < keys.length; i++){
+        var k = keys[i];
+        var com = messages[k].comments;
+        // $("#textBox").text(com)
+    }
+    
+}
+function errData(err) {
+    console.log('error')
+} -->
