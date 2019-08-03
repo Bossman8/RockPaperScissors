@@ -12,8 +12,14 @@ firebase.initializeApp(firebaseConfig);
 
 var btnLogout = document.getElementById('logoutBtn');
 $("#logoutBtn").on("click", function(){
+    firebase.database().ref().set({
+        
+        
+    })
     $("#logoutBtn").prop("onclick", null).off("click");
     firebase.auth().signOut();
+    
+    
     window.location.href = "index2.html"
 })
 firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -25,7 +31,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }
     else {
         console.log("Not Logged In");
+        
+
         window.location.href = "index2.html";
+
         
     }
 })
@@ -48,25 +57,21 @@ var choices = ["rock", "paper", "scissors"]
 database.ref().on("value", function (snapshot) {
 
     console.log(snapshot.val())
-    if (snapshot.child("p1name").exists()  && snapshot.child("p2name").exists() && snapshot.child("p2wins").exists() && snapshot.child("p2losses").exists() && snapshot.child("p2wins").exists() && snapshot.child("p2losses").exists()) {
+    if (snapshot.child("p1name").exists()  && snapshot.child("p2name").exists() && snapshot.child("p2losses").exists() && snapshot.child("p2losses").exists()) {
         p1name = snapshot.val().p1name;
-        p1wins = snapshot.val().p1wins;
         p1losses = snapshot.val().p1losses;
         p2name = snapshot.val().p2name;
-        p2wins = snapshot.val().p2wins;
         p2losses = snapshot.val().p2losses;
         comments = snapshot.val().comments;
         $("#p1name").html(p1name);
         $("#p2name").html(p2name);
-        $("#p1score").html(p1wins);
-        $("#p2score").html(p2wins);
+        
         
 
     } else {
         $("#p1name").html(p1name);
         $("#p2name").html(p2name);
-        $("#p1score").html(p1wins);
-        $("#p2score").html(p2wins);
+        
         
     }
 
@@ -290,7 +295,11 @@ function startGame() {
         $("#p1rock").text("Rock");
         $("#p1paper").text("Paper");
         $("#p1scissors").text("Scissors");
-        $("#turn").text("It's " + p1name + "'s turn.")
+        $("#turn").text("It's " + p1name + "'s turn.");
+        $("#p1score").html(p1wins);
+        $("#p2score").html(p2wins);
+
+
         goPlayerOne();
         console.log(p1answer)
         console.log(p2answer)

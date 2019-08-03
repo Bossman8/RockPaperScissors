@@ -27,6 +27,7 @@ btnLogin.addEventListener('click', e => {
     const promise = auth.signInWithEmailAndPassword(email, pass);
     
     console.log("Logged in")
+    
 
 
 })
@@ -52,6 +53,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }
     else {
         console.log("Not Logged In");
+        
         
         
     }
