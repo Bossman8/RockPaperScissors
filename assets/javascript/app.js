@@ -16,7 +16,19 @@ $("#logoutBtn").on("click", function(){
     firebase.auth().signOut();
     window.location.href = "index2.html"
 })
-
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if(firebaseUser) {
+        console.log(firebaseUser);
+        
+        console.log("logged In");
+        
+    }
+    else {
+        console.log("Not Logged In");
+        window.location.href = "index2.html";
+        
+    }
+})
 
 var database = firebase.database();
 var p1name = "";
