@@ -10,15 +10,17 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var txtEmail = document.getElementById('txtEmail');
-var txtPassword = document.getElementById('txtPassword');
-var btnLogin = document.getElementById('signInBtn');
-var btnSignUp = document.getElementById('signUpBtn');
-var btnLogout = document.getElementById('logoutBtn');
+
+
+const txtEmail = document.getElementById('txtEmail');
+const txtPassword = document.getElementById('txtPassword');
+const btnLogin = document.getElementById('signInBtn');
+const btnSignUp = document.getElementById('signUpBtn');
+
 
 btnLogin.addEventListener('click', e => {
-    var email = $("#txtEmail").val();
-    var pass = txtPassword.value;
+    const email = $("#txtEmail").val();
+    const pass = txtPassword.value;
     
     const auth = firebase.auth();
     
@@ -30,8 +32,8 @@ btnLogin.addEventListener('click', e => {
 })
 
 btnSignUp.addEventListener('click', e => {
-    var email = $("#txtEmail").val();
-    var pass = txtPassword.value;
+    const email = $("#txtEmail").val();
+    const pass = txtPassword.value;
     console.log(email)
     const auth = firebase.auth();
     
@@ -45,18 +47,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
         console.log(firebaseUser);
         
-        console.log("logged In")
-        window.location.href = "index.html"
+        console.log("logged In");
+        window.location.href = "index.html";
     }
     else {
         console.log("Not Logged In");
-        window.location.href = "index2.html"
+        
         
     }
 })
 
-btnLogout.addEventListener('click', e => {
-    firebase.auth().signOut();
-    
-    
-})
