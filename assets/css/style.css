@@ -60,3 +60,6 @@ strong {
 #signUpForm {
     display: inline;
 }
+#logoutBtn {
+    float: right;
+}

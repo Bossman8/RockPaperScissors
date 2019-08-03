@@ -18,60 +18,29 @@
         <div class="jumbotron">
             <h1 class="display-4" class="text-center">Welcome to Jones Games!</h1>
 
-            <hr class="my-4">
+
             <p>Sign in to start playing!</p>
+            <hr>
+            <div class="form-group" id="SignUpForm">
+
+                <input type="email" id="txtEmail" placeholder="Email">
+            </div>
+            <div class="form-group" id="addPlayer">
+
+                <input type="password" id="txtPassword" placeholder="Password">
+
+            </div>
             <div class="container" id="signInButtons">
                 <a class="btn btn-primary btn-lg" id="signUpBtn" href="#" role="button" data-toggle="modal"
                     data-target="#signUpModal">Sign Up</a>
                 <a class="btn btn-primary btn-lg" id="signInBtn" href="#" role="button">Sign In</a>
+                <a class="btn btn-primary btn-lg" id="logoutBtn" href="#" role="button">Sign Out</a>
+                
             </div>
         </div>
     </div>
 
-    <div class="modal_fade" id="signUpModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1>Sign Up!</h1>
-                    <button type="button" class="button btn-default" id="signUpClose"
-                        data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                        <div class="form-group" id="SignUpForm">
-                                
-                                <input type="email"  id="txtEmail" placeholder="Email">
-                            </div>
-                            <div class="form-group" id="addPlayer">
-                                
-                                <input type="password"  id="txtPassword" placeholder="Password">
-                                <button type="submit" id="signUpModalBtn">Sign Up</button>
-                            </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal_fade" id="signInModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1>Sign In!</h1>
-                    <button type="button" class="button btn-default" id="signInClose"
-                        data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group" id="SignInForm">
-                        
-                        <input type="email"  id="txtEmail" placeholder="Email">
-                    </div>
-                    <div class="form-group" id="addPlayer">
-                        
-                        <input type="password"  id="txtPassword" placeholder="Password">
-                        <button type="submit" id="signInModalBtn">Sign In</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
 

@@ -17,11 +17,12 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="text-center"><strong>Rock Paper Scissors!</strong></h1>
+            <a class="btn btn-primary btn-lg" id="logoutBtn" href="#" role="button">Sign Out</a>
         </div>
     </div>
 
     <div class="container">
-        <form role="form" class="text-center">
+        <form role="form" class="text-center" id="enterUser">
             <div class="form-group" id="addPlayer">
                 <label for="text"></label>
                 <input type="text" class="formControl" id="userName" placeholder="Name">
@@ -90,26 +91,10 @@
         </div>
 </body>
 <script src="./assets/javascript/app.js"></script>
+<script src="./assets/javascript/signin.js"></script>
 
 
 </html>
 
 
 
-<!-- var mes = database.ref('comment');
-mes.on('value', gotData, errData);
-
-function gotData(data) {
-    
-    var messages = data.val();
-    var keys = Object.keys(messages);
-    for (var i = 0; i < keys.length; i++){
-        var k = keys[i];
-        var com = messages[k].comments;
-        // $("#textBox").text(com)
-    }
-    
-}
-function errData(err) {
-    console.log('error')
-} -->

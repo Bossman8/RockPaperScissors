@@ -10,23 +10,13 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const txtEmail = document.getElementById('txtEmail');
-const txtPassword = document.getElementById('txtPassword');
-const btnLogin = document.getElementById('signInModalBtn');
-const btnSignUp = document.getElementById('signUpModalBtn');
-const btnLogout = document.getElementById('logoutBtn');
-
-btnLogin.addEventListener('click', e => {
-    const email = $("#txtEmail").val().trim();
-    const pass = txtPassword.value;
-    console.log(email)
-    const auth = firebase.auth();
-    
-    const promise = auth.signInWithEmailAndPassword(email, pass);
-    
-
-
+var btnLogout = document.getElementById('logoutBtn');
+$("#logoutBtn").on("click", function(){
+    $("#logoutBtn").prop("onclick", null).off("click");
+    firebase.auth().signOut();
+    window.location.href = "index2.html"
 })
+
 
 var database = firebase.database();
 var p1name = "";
@@ -56,11 +46,15 @@ database.ref().on("value", function (snapshot) {
         comments = snapshot.val().comments;
         $("#p1name").html(p1name);
         $("#p2name").html(p2name);
+        $("#p1score").html(p1wins);
+        $("#p2score").html(p2wins);
         
 
     } else {
         $("#p1name").html(p1name);
         $("#p2name").html(p2name);
+        $("#p1score").html(p1wins);
+        $("#p2score").html(p2wins);
         
     }
 
@@ -114,6 +108,7 @@ $("#addUser").on("click", function () {
             p2wins: p2wins,
             p2losses: p2losses,
         })
+        
 
 
     }
@@ -228,12 +223,12 @@ function finishGame () {
     $("#turn").empty()
 
     if (p1answer === "rock" & p2answer === "paper") {
-        p2score++;
+        p2wins++;
         $("#turn").text(p2name + "Wins")
         setTimeout(startGame, 3000)
       }
       else if ((p1answer === "rock") && (p2answer === "scissors")) {
-        p1score++;
+        p1wins++;
         $("#turn").text(p1name + "Wins")
         setTimeout(startGame, 3000)
       }
@@ -242,12 +237,12 @@ function finishGame () {
         setTimeout(startGame, 3000)
       }
       else if ((p1answer === "paper") && (p2answer === "scissors")) {
-        p2score++;
+        p2wins++;
         $("#turn").text(p2name + "Wins")
         setTimeout(startGame, 3000)
       }
       else if ((p1answer === "paper") && (p2answer === "rock")) {
-        p1score++;
+        p1wins++;
         $("#turn").text(p1name + "Wins")
         setTimeout(startGame, 3000)
       }
@@ -256,12 +251,12 @@ function finishGame () {
         setTimeout(startGame, 3000)
       }
       else if ((p1answer === "scissors") && (p2answer === "rock")) {
-        p2score++;
+        p2wins++;
         $("#turn").text(p2name + "Wins")
         setTimeout(startGame, 3000)
       }
       else if ((p1answer === "scissors") && (p2answer === "paper")) {
-        p1score++;
+        p1wins++;
         $("#turn").text(p1name + "Wins")
         setTimeout(startGame, 3000)
       }
@@ -274,6 +269,7 @@ function finishGame () {
 
 
 function startGame() {
+    $("#enterUser").hide();
     if (allPlayersIn = true) {
         p1answer = []
         p2answer = []
