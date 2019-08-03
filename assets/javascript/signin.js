@@ -50,6 +50,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }
     else {
         console.log("Not Logged In");
+        window.location.href = "index2.html"
         
     }
 })
